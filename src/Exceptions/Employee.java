@@ -39,42 +39,14 @@ public class Employee {
     }
 
     public Employee(String name, String surname, int birthyear, int jobstartday) {
-        char[] n = name.toCharArray();
-        char[] s = surname.toCharArray();
-        int c = 0;
-        int f = 0;
-        for (int i = 0; i < name.length(); i++) {
-            if (Character.isLetter(n[i])) {
-                c++;
-            }
-        }
-        if (c == name.length()) {
-            this.name = name;
-        } else {
-            try {
-                throw new Exception();
-            } catch (Exception e) {
-                System.out.println("kaira jaz");
-            }
-        }
-        for (int i = 0; i < surname.length(); i++) {
-            if (Character.isLetter(n[i])) {
-                f++;
-            }
-        }
-        if (f == surname.length()) {
-            this.surname = surname;
-        } else {
-            try {
-                throw new Exception();
-            } catch (Exception e) {
-                System.out.println("kata");
-            }
-        }
+        this.name = name;
+        this.surname = surname;
         this.birthyear = birthyear;
         this.jobstartday = jobstartday;
     }
+public Employee(){
 
+}
     @Override
     public String toString() {
         return "Employee{" +
