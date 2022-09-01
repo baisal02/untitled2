@@ -22,8 +22,10 @@ public class Alfavit {
 
         FileReader fileReader = new FileReader("alphabet1.txt");
         Scanner scanner = new Scanner(fileReader);
+        int r = 1;
         while (scanner.hasNextLine()) {
-            System.out.println(scanner.nextLine());
+            System.out.println(r + ". " + scanner.nextLine());
+            r++;
         }
 
     }
