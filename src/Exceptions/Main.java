@@ -1,8 +1,11 @@
 package Exceptions;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Employee[] employees = new Employee[scanner.nextInt()];
@@ -16,7 +19,7 @@ public class Main {
                     c++;
                 }
             }
-            if (c==0) {
+            if (c == 0) {
                 employees[i].setName(name);
             } else {
                 while (true) {
@@ -28,7 +31,7 @@ public class Main {
                             k++;
                         }
                     }
-                    if (k==0){
+                    if (k == 0) {
                         break;
                     }
                 }
@@ -41,7 +44,7 @@ public class Main {
                     e++;
                 }
             }
-            if (e==0) {
+            if (e == 0) {
                 employees[i].setSurname(surname);
             } else {
                 while (true) {
@@ -53,26 +56,31 @@ public class Main {
                             k++;
                         }
                     }
-                    if (k==0){
+                    if (k == 0) {
                         break;
                     }
                 }
                 employees[i].setSurname(surname);
             }
-            try{int bornyear = scanner.nextInt();
-            }catch (Exception exception)
-            {
-                while(true){
-                   int bornyear = scanner.nextInt();
-                   if(bornyear/1==bornyear){
-                       employees[i].setBirthyear(bornyear);
-                   }
-                }
-            }
 
-            int workyear = scanner.nextInt();
         }
     }
 
+    public static int year(int year) {
+        while (true) {
+            try {
+                if (year < 1950 || year > 2022 - 10) {
+                    throw new myException();
+                } else {
+                    return year;
+                }
+            } catch (Exception e) {
+                year = scanner.nextInt();
+            }
+        }
+    }
 }
+
+
+
 
