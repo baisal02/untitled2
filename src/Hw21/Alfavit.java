@@ -13,6 +13,7 @@ public class Alfavit {
             f.write(i);
             f.write(k);
             f.write("\n");
+            k++;
         }
         for (int i = 48; i < 58; i++) {
             f.write(i);
